@@ -1,2 +1,2 @@
-# sc-knn
-kNN graphs for single-cell data (AnnData)
+# cell-neighbors
+Neighbor graphs for single-cell data (AnnData)
