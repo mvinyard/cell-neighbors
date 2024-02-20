@@ -10,21 +10,21 @@ import sys
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
-with open('scnn/__version__.py') as v:
+with open('cell_neighbors/__version__.py') as v:
     exec(v.read())
 
 
 # -- run setup: ---------------------------------------------------------------
 setuptools.setup(
-    name="scnn",
+    name="cell_neighbors",
     version=__version__,
     python_requires=">3.9.0",
     author="Michael E. Vinyard",
     author_email="mvinyard.ai@gmail.com",
-    url="https://github.com",
+    url="https://github.com/mvinyard",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
-    description="scnn",
+    description="cell_neighbors",
     packages=setuptools.find_packages(),
     install_requires=requirements,
     classifiers=[
