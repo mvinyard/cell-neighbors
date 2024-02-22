@@ -1,3 +1,4 @@
+cell-neighbors
 autodoc
 myst_parser
 sphinx
