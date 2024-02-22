@@ -7,7 +7,7 @@ API Reference
 This section contains the API reference for ``cell-neighbors``.
 
 .. toctree::
-   :caption: caption-tbd:
+   :caption: ``kNN`` Graph:
    :maxdepth: 1
 
    kNN
