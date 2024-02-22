@@ -1,16 +1,16 @@
 
 .. title:: cell-neighbors
 
-.. image:: _static/cellplots.logo.light.png
+.. image:: _static/cell_neighbors.logo.light.png
    :align: left
-   :height: 225
-   :alt: cellplots-header-logo-light
+   :height: 150
+   :alt: cell_neighbors-header-logo-light
    :class: only-light
 
-.. image:: _static/cellplots.logo.dark.png
+.. image:: _static/cell_neighbors.logo.dark.png
    :align: left
-   :height: 225
-   :alt: cellplots-header-logo-dark
+   :height: 150
+   :alt: cell_neighbors-header-logo-dark
    :class: only-dark
 
 .. raw:: html
@@ -41,7 +41,7 @@
    .. grid-item-card::
       :link: quickstart.rst
       :text-align: right
-      :img-background: _static/cellplots-sd-card-light.png
+      :img-background: _static/cell_neighbors-sd-card-light.png
       :class-card: only-light
        
       Quickstart
@@ -56,7 +56,7 @@
    .. grid-item-card::
       :link: install.rst
       :text-align: right
-      :img-background: _static/cellplots-sd-card-light.png
+      :img-background: _static/cell_neighbors-sd-card-light.png
       :class-card: only-light
        
       Installation
@@ -71,7 +71,7 @@
    .. grid-item-card::
       :link: api.rst
       :text-align: right
-      :img-background: _static/cellplots-sd-card-light.png
+      :img-background: _static/cell_neighbors-sd-card-light.png
       :class-card: only-light
        
       API Reference
@@ -86,7 +86,7 @@
    .. grid-item-card::
       :link: examples.rst
       :text-align: right
-      :img-background: _static/cellplots-sd-card-light.png
+      :img-background: _static/cell_neighbors-sd-card-light.png
       :class-card: only-light
        
       Examples
@@ -107,7 +107,7 @@
    .. grid-item-card::
       :link: https://github.com/mvinyard/cell-neighbors
       :text-align: right
-      :img-background: _static/cellplots-sd-card-light.png
+      :img-background: _static/cell_neighbors-sd-card-light.png
       :class-card: only-light
        
       GitHub
@@ -127,7 +127,7 @@
    .. grid-item-card::
       :link: quickstart.rst
       :text-align: right
-      :img-background: _static/cellplots-sd-card-dark.png
+      :img-background: _static/cell_neighbors-sd-card-dark.png
       :class-card: only-dark
        
       Quickstart
@@ -142,7 +142,7 @@
    .. grid-item-card::
       :link: install.rst
       :text-align: right
-      :img-background: _static/cellplots-sd-card-dark.png
+      :img-background: _static/cell_neighbors-sd-card-dark.png
       :class-card: only-dark
        
       Installation
@@ -157,7 +157,7 @@
    .. grid-item-card::
       :link: api.rst
       :text-align: right
-      :img-background: _static/cellplots-sd-card-dark.png
+      :img-background: _static/cell_neighbors-sd-card-dark.png
       :class-card: only-dark
        
       API Reference
@@ -172,7 +172,7 @@
    .. grid-item-card::
       :link: examples.rst
       :text-align: right
-      :img-background: _static/cellplots-sd-card-dark.png
+      :img-background: _static/cell_neighbors-sd-card-dark.png
       :class-card: only-dark
        
       Examples
@@ -192,7 +192,7 @@
    .. grid-item-card::
       :link: https://github.com/mvinyard/cell-neighbors
       :text-align: right
-      :img-background: _static/cellplots-sd-card-dark.png
+      :img-background: _static/cell_neighbors-sd-card-dark.png
       :class-card: only-dark
        
       GitHub

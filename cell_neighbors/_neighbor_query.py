@@ -3,6 +3,7 @@
 import ABCParse
 import anndata
 import pandas as pd
+import numpy as np
 
 
 # -- import local dependencies: -----------------------------------------------
