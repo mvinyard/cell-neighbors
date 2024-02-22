@@ -1,0 +1,9 @@
+autodoc
+myst_parser
+sphinx
+nbsphinx
+pydata_sphinx_theme
+sphinxcontrib-napoleon
+sphinx-copybutton
+sphinx-favicon
+sphinx-design
