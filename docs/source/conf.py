@@ -41,8 +41,8 @@ html_theme_options = {
     "github_url": "https://github.com/mvinyard/cell-neighbors",
     "twitter_url": "https://twitter.com/vinyard_m",
     "logo": {
-      "image_light": "cellplots.logo.light.png",
-      "image_dark": "cellplots.logo.dark.png",
+      "image_light": "cell_neighbors.logo.light.png",
+      "image_dark": "cell_neighbors.logo.dark.png",
    },
 }
 autoclass_content = 'init'

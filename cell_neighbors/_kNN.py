@@ -28,9 +28,13 @@ class kNN(ABCParse.ABCParse):
 
     Attributes:
         _knn_idx_built (bool): Indicates whether the kNN index has been built.
+
         adata (anndata.AnnData): An AnnData object containing data.
+
         _use_key (str): The key specifying the data to use for building the kNN graph.
+
         _n_trees (int): The number of trees to build the Annoy index.
+
         _distance_metric (str): The distance metric used for building the Annoy index.
 
     Methods:
@@ -48,14 +52,23 @@ class kNN(ABCParse.ABCParse):
         **kwargs,
     ) -> None:
         """Initializes the kNN instance.
+        
 
         Args:
             adata (anndata.AnnData): An AnnData object containing data.
+
             use_key (str): The key specifying the data to use for building the kNN graph.
+            
             n_trees (int): The number of trees to build the Annoy index.
+            
             distance_metric (str): The distance metric used for building the Annoy index.
+            
             *args: Additional positional arguments.
+            
             **kwargs: Additional keyword arguments.
+
+        Returns:
+            None
         """
         self._knn_idx_built = False
         self.__parse__(locals(), public=["adata"])
@@ -132,12 +145,15 @@ class kNN(ABCParse.ABCParse):
         """Query the kNN graph for neighbors of a given set of query points.
 
         Args:
+
             X_query (np.ndarray): The query points for which neighbors are to be found.
-            obs_key (Optional[str]): The key for accessing observation attributes.
-            label_only (bool): Flag indicating whether to return only labels of the neighbors.
+
+            obs_key (Optional[str]): The key for accessing observation attributes. **Default**: ``None``.
+            
+            label_only (bool): Flag indicating whether to return only labels of the neighbors. **Default**: ``True``.
 
         Returns:
-            NeighborQuery: The NeighborQuery instance containing information about neighbors.
+            (NeighborQuery): The NeighborQuery instance containing information about neighbors.
         """
         return self._query_cls(X_query, obs_key=obs_key, label_only=label_only)
 
