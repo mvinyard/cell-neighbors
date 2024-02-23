@@ -15,6 +15,7 @@ class GraphQuery(ABCParse.ABCParse):
         self.__parse__(locals())
 
     def forward(self) -> Generator:
+        """Runs as a generator: `get_nns_by_vector`."""
         for x_query in self._X_query:
             yield self._idx.get_nns_by_vector(x_query, self._n_neighbors)
 
