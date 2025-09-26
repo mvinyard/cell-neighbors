@@ -12,7 +12,7 @@ from ._neighbor_attribute_map import map_neighbor_attributes
 from ._neighbor_attribute_counter import NeighborAttributeCounter
 
 # -- set up logger: -----------------------------------------------------------
-import py_pkg_logging
+# import py_pkg_logging
 import logging
 
 logger = logging.getLogger(__name__)
@@ -36,7 +36,7 @@ class NeighborQuery(ABCParse.ABCParse):
         
         n_dim (int): Number of dimensions.
     """
-    @py_pkg_logging.log_function_call(logger)
+    # @py_pkg_logging.log_function_call(logger)
     def __init__(self, idx, adata: anndata.AnnData, n_dim: int, *args, **kwargs):
         """Initializes the NeighborQuery object with the provided Annoy index,
         annotated data, and dimensions.
