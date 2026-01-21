@@ -1,9 +1,11 @@
 # -- import packages: ---------------------------------------------------------
 import adata_query
 import anndata
+import json
 import logging
 import numpy as np
 import pandas as pd
+from pathlib import Path
 import voyager
 
 # -- set type hints: ----------------------------------------------------------
@@ -258,6 +260,83 @@ class kNN:
             return concat_df
 
         return _list_of_dfs
+
+    def save(self, path: Union[str, Path]) -> None:
+        """Save the kNN index and metadata to disk.
+
+        Saves two files:
+        - {path}.index: The voyager index file
+        - {path}.json: Metadata (use_key, n_neighbors, metric, build_indices)
+
+        Args:
+            path: Base path for saved files (without extension).
+
+        Example:
+            >>> knn.save("my_model/knn")
+            # Creates my_model/knn.index and my_model/knn.json
+        """
+        path = Path(path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+
+        # Save the voyager index
+        index_path = str(path) + ".index"
+        self.index.save(index_path)
+
+        # Save metadata
+        metadata = {
+            "use_key": self.use_key,
+            "n_neighbors": self.n_neighbors,
+            "metric": self._metric,
+            "n_dim": self.n_dim,
+            "build_indices": self._build_indices,
+        }
+        metadata_path = str(path) + ".json"
+        with open(metadata_path, "w") as f:
+            json.dump(metadata, f)
+
+        logger.info(f"Saved kNN index to {index_path}")
+
+    @classmethod
+    def load(
+        cls,
+        path: Union[str, Path],
+        adata: anndata.AnnData,
+    ) -> "kNN":
+        """Load a saved kNN index from disk.
+
+        Args:
+            path: Base path of saved files (without extension).
+            adata: AnnData object to associate with the loaded index.
+
+        Returns:
+            A new kNN instance with the loaded index.
+
+        Example:
+            >>> knn = kNN.load("my_model/knn", adata)
+        """
+        path = Path(path)
+
+        # Load metadata
+        metadata_path = str(path) + ".json"
+        with open(metadata_path, "r") as f:
+            metadata = json.load(f)
+
+        # Create instance without building index
+        instance = cls.__new__(cls)
+        instance.adata = adata
+        instance.use_key = metadata["use_key"]
+        instance.n_neighbors = metadata["n_neighbors"]
+        instance._metric = metadata["metric"]
+        instance.space = METRIC_TO_SPACE.get(metadata["metric"], voyager.Space.Euclidean)
+        instance._build_indices = metadata["build_indices"]
+        instance._KNN_IDX_BUILT = True
+
+        # Load the voyager index
+        index_path = str(path) + ".index"
+        instance._index = voyager.Index.load(index_path)
+
+        logger.info(f"Loaded kNN index from {index_path} with {len(instance._build_indices)} items")
+        return instance
 
     def __repr__(self) -> str:
         """String representation of the kNN instance."""
